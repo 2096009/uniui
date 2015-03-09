@@ -1,0 +1,25 @@
+{% extends 'rango/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} Profile {% endblock %}
+
+{% block body_block %}
+<div class="page-header">
+	<h1>User Profile</h1>
+</div>
+<div class="hero-unit">
+		{% if user_name %}
+		<p>Username: {{ user_name.username }}</p>
+		<p>Email: {{ user_name.email }}</p>
+		{% if website %}
+			<p>Website: <a href="{{ website }}">{{ website }}</a></p>
+		{% endif %}
+			{% if picture %}
+			<img src="/media/{{picture}}" width="250px" />
+		{% endif %}
+		{% endif %}
+	<br/>
+
+</div>
+{% endblock %}
